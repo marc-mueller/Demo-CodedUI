@@ -1,0 +1,39 @@
+﻿<section id="calculator-view" class="mainbar" data-ng-controller="calculator as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="widget wviolet">
+                        <div data-cc-widget-header title="Calculator"
+                             allow-collapse="true"></div>
+                        <div class="widget-content text-info">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="input-calculator" type="number" ng-model="vm.firstnumber" id="SimpleCalculatorTxtFirstNumber" />
+                                    <input class="input-calculator" type="number" ng-model="vm.secondnumber" id="SimpleCalculatorTxtSecondNumber" />
+                                </div>
+                            </div>
+                            <div class="row text">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default btn-calculator" data-ng-click="vm.add()" id="SimpleCalculatorBtnAdd" >Add</button>
+                                    <button type="button" class="btn btn-default btn-calculator" data-ng-click="vm.subtract()" id="SimpleCalculatorBtnSubtract">Subtract</button>
+                                    <button type="button" class="btn btn-default btn-calculator" data-ng-click="vm.multiply()" id="SimpleCalculatorBtnMultiply">Multiply</button>
+                                    <button type="button" class="btn btn-default btn-calculator" data-ng-click="vm.divide()" id="SimpleCalculatorBtnDivide">Divide</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="input-calculator" type="number" ng-model="vm.result" readonly="true" id="SimpleCalculatorTxtResult" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</section>
