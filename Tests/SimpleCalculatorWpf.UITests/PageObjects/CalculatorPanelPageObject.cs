@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UITesting;
 using Microsoft.VisualStudio.TestTools.UITesting.WpfControls;
 using PageObjectsBase;
+using PageObjectsBase.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace SimpleCalculatorWpf.UITests.PageObjects
 {
     public class CalculatorPanelPageObject : PageObjectBase
     {
-        private WpfEdit firstNumberField;
-        private WpfEdit secondNumberField;
+        private WpfCustom firstNumberField;
+        private WpfCustom secondNumberField;
         private WpfEdit resultField;
         private WpfButton addButton;
         private WpfButton subtractButton;
@@ -24,25 +25,25 @@ namespace SimpleCalculatorWpf.UITests.PageObjects
 
         }
 
-        public WpfEdit FirstNumberField
+        public WpfCustom FirstNumberField
         {
             get
             {
                 if (firstNumberField == null)
                 {
-                    firstNumberField = FindControlById<WpfEdit>("SimpleCalculatorTxtFirstNumber");
+                    firstNumberField = FindControlById<WpfCustom>("SimpleCalculatorTxtFirstNumber");
                 }
                 return firstNumberField;
             }
         }
 
-        public WpfEdit SecondNumberField
+        public WpfCustom SecondNumberField
         {
             get
             {
                 if (secondNumberField == null)
                 {
-                    secondNumberField = FindControlById<WpfEdit>("SimpleCalculatorTxtSecondNumber");
+                    secondNumberField = FindControlById<WpfCustom>("SimpleCalculatorTxtSecondNumber");
                 }
                 return secondNumberField;
             }
@@ -110,13 +111,13 @@ namespace SimpleCalculatorWpf.UITests.PageObjects
 
         public CalculatorPanelPageObject EnterFirstNumber(double number)
         {
-            this.FirstNumberField.Text = number.ToString();
+            this.FirstNumberField.SetValue(number.ToString());
             return this;
         }
 
         public CalculatorPanelPageObject EnterSecondNumber(double number)
         {
-            this.SecondNumberField.Text = number.ToString();
+            this.SecondNumberField.SetValue(number.ToString());
             return this;
         }
 
